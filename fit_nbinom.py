@@ -16,6 +16,8 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <http://www.gnu.org/licenses/>.
 
+from __future__ import print_function
+
 import numpy as np
 from scipy.special import gammaln
 from scipy.special import psi
@@ -76,6 +78,13 @@ def fit_nbinom(X, initial_params = None):
     params = optimres[0]
     return {'size': params[0], 'prob': params[1]}
 
-testset = np.random.negative_binomial(float(sys.argv[1]), float(sys.argv[2]),
-        1000)
-print fit_nbinom(testset)
+
+if __name__ == '__main__':
+    if len(sys.argv) != 3:
+        print("Usage: %s size_param prob_param" % sys.argv[0])
+        exit()
+
+    testset = np.random.negative_binomial(float(sys.argv[1]),
+                                          float(sys.argv[2]),
+                                          1000)
+    print(fit_nbinom(testset))
