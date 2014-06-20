@@ -26,10 +26,11 @@ from scipy.optimize import fmin_l_bfgs_b as optim
 
 import sys
 
+
 # X is a numpy array representing the data
 # initial params is a numpy array representing the initial values of
 # size and prob parameters
-def fit_nbinom(X, initial_params = None):
+def fit_nbinom(X, initial_params=None):
     def log_likelihood(params, *args):
         r, p = params
         X = args[0]
@@ -38,10 +39,10 @@ def fit_nbinom(X, initial_params = None):
         #MLE estimate based on the formula on Wikipedia:
         # http://en.wikipedia.org/wiki/Negative_binomial_distribution#Maximum_likelihood_estimation
         result = np.sum(gammaln(X + r)) \
-                 - np.sum(np.log(factorial(X))) \
-                 - N*(gammaln(r)) \
-                 + N*r*np.log(p) \
-                 + np.sum(X*np.log(1-(p if p < 1 else 1-1e-10)))
+            - np.sum(np.log(factorial(X))) \
+            - N*(gammaln(r)) \
+            + N*r*np.log(p) \
+            + np.sum(X*np.log(1-(p if p < 1 else 1-1e-10)))
 
         return -result
 
@@ -52,8 +53,8 @@ def fit_nbinom(X, initial_params = None):
 
         pderiv = N*r / (N*r + np.sum(X))
         rderiv = np.sum(psi(X + r)) \
-                 - N*psi(r) \
-                 + N*np.log(r/(r+np.mean(X)))
+            - N*psi(r) \
+            + N*np.log(r/(r+np.mean(X)))
 
         return np.array([-rderiv, -pderiv])
 
@@ -72,7 +73,7 @@ def fit_nbinom(X, initial_params = None):
     optimres = optim(log_likelihood,
                      x0=initial_params,
                      fprime=log_likelihood_deriv,
-                     args = (X,),
+                     args=(X,),
                      bounds=bounds)
 
     params = optimres[0]
