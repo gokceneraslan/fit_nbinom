@@ -72,8 +72,9 @@ def fit_nbinom(X, initial_params=None):
     bounds = [(1e-10, None), (1e-10, 1)]
     optimres = optim(log_likelihood,
                      x0=initial_params,
-                     fprime=log_likelihood_deriv,
+                     #fprime=log_likelihood_deriv,
                      args=(X,),
+                     approx_grad=1,
                      bounds=bounds)
 
     params = optimres[0]
