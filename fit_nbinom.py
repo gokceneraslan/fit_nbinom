@@ -51,10 +51,10 @@ def fit_nbinom(X, initial_params=None):
         X = args[0]
         N = X.size
 
-        pderiv = N*r / (N*r + np.sum(X))
+        pderiv = (N*r)/p - np.sum(X)/(1-(p if p < 1 else 1-1e-10))
         rderiv = np.sum(psi(X + r)) \
             - N*psi(r) \
-            + N*np.log(r/(r+np.mean(X)))
+            + N*np.log(p)
 
         return np.array([-rderiv, -pderiv])
 
