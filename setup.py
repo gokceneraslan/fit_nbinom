@@ -10,6 +10,6 @@ setup(
     packages=["fit_nbinom"],
     url="https://github.com/t-yui/fit_nbinom",
     license="GNU General Public License",
-    description="Calculate parameters of Negative-Binomial distribution via maximum likelihood method.",
+    description="Negative binomial maximum likelihood estimate implementation in Python using L-BFGS-B",
     install_requires=["numpy", "scipy"]
 )
