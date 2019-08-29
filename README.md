@@ -76,7 +76,7 @@ output:
 
 # description of output parameters
 In the probability mass function of negative binomial distribution below:
-- `size` parameter refers to r <img src="https://latex.codecogs.com/gif.latex?\large&space;r" />
+- `size` parameter refers to <img src="https://latex.codecogs.com/gif.latex?\large&space;r" />
 - `mu` parameter refers to <img src="https://latex.codecogs.com/gif.latex?\large&space;\mu" />
 
 <img src="https://latex.codecogs.com/gif.latex?\large&space;\P&space;(X=x)&space;=&space;\binom{x&plus;r-1}{x}\left(&space;\frac{r}{r&plus;\mu}&space;\right)^r&space;\left(&space;\frac{\mu}{r&plus;\mu}&space;\right)^x" />
