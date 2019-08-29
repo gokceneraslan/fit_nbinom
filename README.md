@@ -65,8 +65,8 @@ output:
 
 ## 3. Get standard errors of parameters
 ```python
-parameters = res.params()
-print(parameters)
+stderrs = res.stderr()
+print(stderrs)
 ```
 
 output:
