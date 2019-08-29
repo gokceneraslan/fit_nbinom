@@ -1,22 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# fit_nbinom
-# Copyright (C) 2014 Gokcen Eraslan
-#
-# This program is free software: you can redistribute it and/or modify
-# it under the terms of the GNU General Public License as published by
-# the Free Software Foundation, either version 3 of the License, or
-# (at your option) any later version.
-#
-# This program is distributed in the hope that it will be useful,
-# but WITHOUT ANY WARRANTY; without even the implied warranty of
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-# GNU General Public License for more details.
-#
-# You should have received a copy of the GNU General Public License
-# along with this program.  If not, see <http://www.gnu.org/licenses/>.
-
 import sys
 
 import numpy as np
@@ -27,7 +11,7 @@ from scipy.optimize import fmin_l_bfgs_b as optim
 from scipy.special import polygamma
 from logzero import logger
 
-from fit_nbinom.fit_model import fit_model
+from fit_nbinom.fit_model import Fit_model
 
 
 def log_likelihood(params, *args):
@@ -134,7 +118,7 @@ def fit_nbinom(X, seed=1):
             "mu": np.sqrt(1 / (mu_info * N)),
         },
     }
-    nbinomfit = fit_model(results)
+    nbinomfit = Fit_model(results)
     return nbinomfit
 
 

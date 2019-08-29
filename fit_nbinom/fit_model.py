@@ -1,15 +1,16 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-# fit_model
-# Instance generated from fit_model class works
-# when users get information about estimated parameters.
 
 from tabulate import tabulate
 from scipy.stats import norm
 
 
-class fit_model:
+class Fit_model:
+    """
+    Instance generated from fit_model class works
+    when users get information about estimated parameters.
+    """
     def __init__(self, results):
         self.results = results
 
