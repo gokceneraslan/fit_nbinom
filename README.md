@@ -18,8 +18,7 @@ import numpy as np
 # X is a list or a numpy array representing the data
 X = np.array([16, 18, 11, 19, 20, 3, 2, 11, 8, 5])
 
-# 
-res = fit_nbinom().fit(X=X)
+res = fit_nbinom(X=X)
 
 res.summary()
 ```
