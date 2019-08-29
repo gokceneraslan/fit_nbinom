@@ -2,7 +2,6 @@
 # -*- coding: utf-8 -*-
 
 # fit_model
-# AUTHOR: Yui Tomo
 # Instance generated from fit_model class works
 # when users get information about estimated parameters.
 
@@ -43,4 +42,4 @@ class fit_model:
         return self.results["params"]
 
     def stderr(self):
-        return self.results["params"]
+        return self.results["stderr"]
