@@ -27,7 +27,7 @@ from scipy.optimize import fmin_l_bfgs_b as optim
 from scipy.special import polygamma
 from logzero import logger
 
-from fit_model import fit_model
+from fit_nbinom.fit_model import fit_model
 
 
 def log_likelihood(params, *args):
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     mu = float(sys.argv[2])
     p = size / (size + mu)
 
-    testset = np.random.negative_binomial(n=size, p=p, size=10)
+    testset = np.random.negative_binomial(n=size, p=p, size=10000)
 
     nbinomfit = fit_nbinom(testset)
     nbinomfit.summary()
