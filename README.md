@@ -9,7 +9,7 @@ python setup.py install
 
 # usage
 
-1. Fit negative-binomial model and show summary
+## 1. Fit negative-binomial model and show summary
 
 ```python
 from fit_nbinom import fit_nbinom
@@ -52,7 +52,7 @@ output:
 \end{tabular}
 ```
 
-2. Get estimates of parameters
+## 2. Get estimates of parameters
 ```python
 parameters = res.params()
 print(parameters)
@@ -63,7 +63,7 @@ output:
 {'size': 3.1974721271555056, 'mu': 11.300000225025348}
 ```
 
-3. Get standard errors of parameters
+## 3. Get standard errors of parameters
 ```python
 parameters = res.params()
 print(parameters)
@@ -76,7 +76,7 @@ output:
 
 # description of output parameters
 In the probability mass function of negative binomial distribution below:
-- `size` parameter refers to r
-- `mu` parameter refers to $\mu$
+- `size` parameter refers to r <img src="https://latex.codecogs.com/gif.latex?\large&space;r" />
+- `mu` parameter refers to <img src="https://latex.codecogs.com/gif.latex?\large&space;\mu" />
 
-$\P (X=x) = \binom{x+r-1}{x}\left( \frac{r}{r+\mu} \right)^r \left( \frac{\mu}{r+\mu} \right)^x$
+<img src="https://latex.codecogs.com/gif.latex?\large&space;\P&space;(X=x)&space;=&space;\binom{x&plus;r-1}{x}\left(&space;\frac{r}{r&plus;\mu}&space;\right)^r&space;\left(&space;\frac{\mu}{r&plus;\mu}&space;\right)^x" />
