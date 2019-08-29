@@ -27,7 +27,7 @@ from scipy.optimize import fmin_l_bfgs_b as optim
 from scipy.special import polygamma
 from logzero import logger
 
-from fit_model import fit_model
+from fit_nbinom.fit_model import fit_model
 
 
 def log_likelihood(params, *args):
