@@ -2,10 +2,6 @@
 # -*- coding: utf-8 -*-
 
 import numpy as np
-from scipy.special import gammaln
-from scipy.special import psi
-from scipy.special import factorial
-from scipy.optimize import fmin_l_bfgs_b as optim
 from scipy.special import polygamma
 from logzero import logger
 
